@@ -13,6 +13,7 @@ func ListFacts(c *fiber.Ctx) error {
 	return c.Render("index", fiber.Map{
 		"Title":    "Nattrio Trivia",
 		"Subtitle": "List of facts",
+		"Facts":    facts,
 	})
 
 }
