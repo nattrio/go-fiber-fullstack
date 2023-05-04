@@ -10,7 +10,11 @@ func ListFacts(c *fiber.Ctx) error {
 	facts := []models.Fact{}
 	database.DB.Db.Find(&facts)
 
-	return c.Status(200).JSON(facts)
+	return c.Render("index", fiber.Map{
+		"Title":    "Nattrio Trivia",
+		"Subtitle": "List of facts",
+	})
+
 }
 
 func CreateFact(c *fiber.Ctx) error {
