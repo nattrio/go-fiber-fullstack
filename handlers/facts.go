@@ -15,7 +15,14 @@ func ListFacts(c *fiber.Ctx) error {
 		"Subtitle": "List of facts",
 		"Facts":    facts,
 	})
+}
 
+// Create new Fact View handler
+func NewFactView(c *fiber.Ctx) error {
+	return c.Render("new", fiber.Map{
+		"Title":    "New Fact",
+		"Subtitle": "Add a cool fact!",
+	})
 }
 
 func CreateFact(c *fiber.Ctx) error {
