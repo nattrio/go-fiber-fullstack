@@ -3,8 +3,8 @@ module github.com/nattrio/go-simple-crud
 go 1.19
 
 require (
-	github.com/divrhino/divrhino-trivia v0.0.0-20221017051552-eec99bad7aea
 	github.com/gofiber/fiber/v2 v2.44.0
+	github.com/gofiber/template v1.8.1
 	gorm.io/driver/postgres v1.5.0
 	gorm.io/gorm v1.25.0
 )
