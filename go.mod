@@ -1,17 +1,16 @@
 module github.com/nattrio/go-simple-crud
 
-go 1.19
+go 1.20
 
 require (
-	github.com/divrhino/divrhino-trivia v0.0.0-20221017051552-eec99bad7aea
 	github.com/gofiber/fiber/v2 v2.44.0
+	github.com/gofiber/template v1.8.1
 	gorm.io/driver/postgres v1.5.0
 	gorm.io/gorm v1.25.0
 )
 
 require (
 	github.com/andybalholm/brotli v1.0.5 // indirect
-	github.com/gofiber/template v1.8.1 // indirect
 	github.com/google/uuid v1.3.0 // indirect
 	github.com/jackc/pgpassfile v1.0.0 // indirect
 	github.com/jackc/pgservicefile v0.0.0-20221227161230-091c0ba34f0a // indirect

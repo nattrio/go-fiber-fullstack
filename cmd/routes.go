@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/divrhino/divrhino-trivia/handlers"
 	"github.com/gofiber/fiber/v2"
+	"github.com/nattrio/go-simple-crud/handlers"
 )
 
 func setupRoutes(app *fiber.App) {

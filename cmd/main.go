@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/divrhino/divrhino-trivia/database"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/template/html"
+	"github.com/nattrio/go-simple-crud/database"
 )
 
 func main() {
