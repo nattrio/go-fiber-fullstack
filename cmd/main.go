@@ -3,7 +3,7 @@ package main
 import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/template/html"
-	"github.com/nattrio/go-simple-crud/database"
+	"github.com/nattrio/go-fiber-fullstack/database"
 )
 
 func main() {

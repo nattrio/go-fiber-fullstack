@@ -2,8 +2,8 @@ package handlers
 
 import (
 	"github.com/gofiber/fiber/v2"
-	"github.com/nattrio/go-simple-crud/database"
-	"github.com/nattrio/go-simple-crud/models"
+	"github.com/nattrio/go-fiber-fullstack/database"
+	"github.com/nattrio/go-fiber-fullstack/models"
 )
 
 func ListFacts(c *fiber.Ctx) error {
@@ -37,4 +37,18 @@ func CreateFact(c *fiber.Ctx) error {
 	}
 
 	return ListFacts(c)
+}
+
+func ShowFact(c *fiber.Ctx) error {
+	fact := models.Fact{}
+	result := database.DB.Db.First(&fact, c.Params("id"))
+	if result.Error != nil {
+		return c.Status(404).SendString("Fact not found")
+	}
+
+	return c.Render("show", fiber.Map{
+		"Title":    "Fact",
+		"Subtitle": "Fact details",
+		"Fact":     fact,
+	})
 }

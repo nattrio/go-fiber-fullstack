@@ -5,7 +5,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/nattrio/go-simple-crud/models"
+	"github.com/nattrio/go-fiber-fullstack/models"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"

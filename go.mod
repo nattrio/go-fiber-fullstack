@@ -1,4 +1,4 @@
-module github.com/nattrio/go-simple-crud
+module github.com/nattrio/go-fiber-fullstack
 
 go 1.19
 
