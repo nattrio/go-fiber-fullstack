@@ -41,14 +41,12 @@ func CreateFact(c *fiber.Ctx) error {
 
 func ShowFact(c *fiber.Ctx) error {
 	fact := models.Fact{}
-	result := database.DB.Db.First(&fact, c.Params("id"))
-	if result.Error != nil {
-		return c.Status(404).SendString("Fact not found")
-	}
+	id := c.Params("id")
+
+	database.DB.Db.Where("id = ?", id).First(&fact)
 
 	return c.Render("show", fiber.Map{
-		"Title":    "Fact",
-		"Subtitle": "Fact details",
-		"Fact":     fact,
+		"Title": "Single Fact",
+		"Fact":  fact,
 	})
 }
