@@ -4,6 +4,7 @@ import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/template/html"
 	"github.com/nattrio/go-fiber-fullstack/database"
+	"github.com/nattrio/go-fiber-fullstack/handlers"
 )
 
 func main() {
@@ -19,6 +20,8 @@ func main() {
 	setupRoutes(app)
 
 	app.Static("/", "./public")
+
+	app.Use(handlers.NotFound)
 
 	app.Listen(":3000")
 }
