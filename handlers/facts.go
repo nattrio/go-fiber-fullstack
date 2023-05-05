@@ -65,20 +65,21 @@ func EditFact(c *fiber.Ctx) error {
 
 	return c.Render("edit", fiber.Map{
 		"Title":    "Edit Fact",
-		"Subtitle": "Edit a your fact!",
+		"Subtitle": "Edit your interesting fact",
 		"Fact":     fact,
 	})
-
 }
 
 func UpdateFact(c *fiber.Ctx) error {
-	fact := models.Fact{}
+	fact := new(models.Fact)
 	id := c.Params("id")
 
+	// Parsing the request body
 	if err := c.BodyParser(fact); err != nil {
 		return c.Status(fiber.StatusServiceUnavailable).SendString(err.Error())
 	}
 
+	// Write updated values to the database
 	result := database.DB.Db.Model(&fact).Where("id = ?", id).Updates(fact)
 	if result.Error != nil {
 		return EditFact(c)
